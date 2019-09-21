@@ -231,8 +231,13 @@ h3 {
   line-height: 25px;
 }
 h4 {
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 24px;
+  line-height: 36px;
+  color: #033C66;
+  margin: 0 0 15px 0;
+  font-family: 'Source Sans Pro';
+  font-weight: 300;
+  text-align: center;
 }
 h5 {
   font-size: 14px;
@@ -245,12 +250,21 @@ p {
 h1.entry-title {
   font-size: 1.31rem;
   border-bottom: 1px solid #eaecef;
+  text-align: center;
 }
 h2.entry-title {
   border-bottom: 1px solid #eaecef;
 }
 h3.widget-title {
   font-size: 1.2rem;
+}
+
+.entry-title{
+  text-align: center;
+  width: 60%;
+  margin: auto;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 /*--------------------------------------------------------------
@@ -276,6 +290,36 @@ figure {
 table {
   margin: 0 0 1.5em;
   width: 100%;
+}
+
+.toggle-text{
+  background-color: white;
+}
+
+.card{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.card-header{
+  background-color: white;
+}
+#toggleSection{
+  margin: 0 0 0 0;
+  width: 100%;
+  background-color: white;
+  font-size: 32px;
+  line-height: 48px;
+  font-weight: 300;
+  color: #033C66;
+  border: none;
+  text-decoration: none;
+  border-radius: 15px;
+  text-align: left;
+}
+
+.card-body{
+  font-size: 17px;
+  font-weight: 300;
 }
 
 /*--------------------------------------------------------------
@@ -595,6 +639,10 @@ body:not(.theme-preset-active) #masthead .navbar-nav > li.current_page_item > a 
   background: #eee none repeat scroll 0 0;
 }
 
+.post-thumbnail {
+  text-align: center;
+  padding-top: 1.8rem;
+}
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
@@ -719,31 +767,39 @@ a img.aligncenter {
 
 /*--------------------------------------------------------------
 # Widgets
+contact widget custom html (for safe keeping in event of a theme change)
+
+<div class="contact-sasha-widget">
+	<p class="contact-widget-text">
+		Write or call for a free consultation.
+	</p>
+	<a id="contact-widget-button" role="button" class="btn btn-primary rounded-0" href="http://localhost/brodsky_law/contact/">Contact Sasha</a>
+</div>
 --------------------------------------------------------------*/
-#contact-widget{
-  justify-content: center;
-  align-items: center;
-}
+
 #contact-widget-button{
   margin:0 auto;
   display:block;
   font-size: 18px;
   font-weight: 500;
-  padding: 10px 20px 15px 20px;
+  margin: 10px 20px 0 20px;
 }
 .contact-sasha-widget{
   background-color: #aaaaaa;
   border-radius: 4px;
   width: 208px;
+  padding-bottom: 14px;
+  align-self-centerS
 }
 .contact-widget-text{
   color: white;
   text-align: center;
   padding-top: 12px;
-  margin-bottom: 3px;
+  margin-bottom: 12px;
   font-size: 18px;
   font-weight: 500;
   padding: 12px 10px 0 10px;
+  line-height: 22px;
 }
 .widget {
   margin: 0 0 1.5em;
@@ -777,6 +833,18 @@ a img.aligncenter {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
+.page-text{
+  font-size: 17px;
+  font-weight: 300px;
+  color: #555555;
+  line-height: 22px;
+}
+.content-area{
+  justify-content: center;
+  margin: auto;
+  padding-left: .07rem;
+}
+
 #content.site-content {
   padding-bottom: 3.75rem;
   padding-top: 4.125rem;
@@ -805,8 +873,12 @@ a img.aligncenter {
 .entry-content,
 .entry-summary {
   margin: 1.5em 0 0;
+  padding-left: 20px;
 }
-
+#page-container{
+  padding-bottom: 13px;
+  padding-top: 30px;
+}
 .page-links {
   clear: both;
   margin: 0 0 1.5em;
@@ -826,9 +898,12 @@ a img.aligncenter {
 }
 
 .entry-title > a {
-  color: inherit;
+  color: #033C66;
+  font-size: 38px;
+  line-height: 38px;
+  font-weight: 300;
 }
-.about-page-title{
+.page-title{
   font-weight: 300;
   font-size: 48px;
   color: #033C66;
@@ -871,6 +946,10 @@ a img.aligncenter {
   font-weight: bold;
   border-width: 2px;
   border-color: white;
+  }
+
+  .wpcf7-form-control wpcf7-textarea form-control{
+    max-height: 150px;
   }
   /*  
   .wpcf7 input[type="text"],
@@ -1096,7 +1175,8 @@ body:not(.theme-preset-active) footer#colophon {
   bottom: 0;
 }
 .navbar-dark .site-info {
-  color: #fff;
+  
+  background-color: #033C66;
 }
 #copyright-text {
   font-size: 16px;
@@ -1148,10 +1228,25 @@ body:not(.theme-preset-active) footer#colophon {
     padding-left: 30px;
     padding-bottom: 3px;
     padding-top: -10px;
+    justify-content: space-around;
+    display: flex;
+    align-items: center;
   }
   .wpcf7{
     text-align: center;
     padding-left: 0px;
+  }
+  /*centers contact widget in mobile view*/
+  #contact-widget{
+    justify-content: space-around;
+    display: flex;
+    align-items: center;
+  }
+ 
+  .dropdown-item{
+    padding-top: 20px;
+    color: slategray;
+
   }
 
 }
@@ -1165,6 +1260,10 @@ body:not(.theme-preset-active) footer#colophon {
   html {
     font-size: 95%;
   }
+  .dropdown-item{
+    padding-top: 20px;
+    color: slategray;
+  }
 }
 
 @media screen and (max-width: 1199px) {
@@ -1176,6 +1275,11 @@ body:not(.theme-preset-active) footer#colophon {
     box-shadow: none;
     border: none;
   }
+  .dropdown-item{
+    padding-top: 20px;
+    color: slategray;
+  }
+
 }
 /*--------------------------------------------------------------
 ## Netbook
